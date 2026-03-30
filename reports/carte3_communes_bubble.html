@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_820d005b28b325020506d8b2220576b4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed; bottom: 30px; right: 30px;
+    background: white; border: 2px solid #aaa;
+    border-radius: 8px; padding: 10px 14px;
+    font-family: Arial; font-size: 12px;
+    z-index: 9999; box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+">
+    <b>Taille des bulles</b><br>
+    = % de prélèvements<br>
+    dépassant 1 mg/kg<br>
+    <hr style="margin:5px 0;">
+    Couleur = taux médian
+</div>
+    
+            <div class="folium-map" id="map_820d005b28b325020506d8b2220576b4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_820d005b28b325020506d8b2220576b4 = L.map(
+                "map_820d005b28b325020506d8b2220576b4",
+                {
+                    center: [14.65, -61.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d2cdd9bc0e54e03a0c924b363ff5583c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d2cdd9bc0e54e03a0c924b363ff5583c.addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var circle_marker_ebe2db25f95c4175dd134a9436831214 = L.circleMarker(
+                [14.811819484899276, -61.127274141828025],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.459016393442623, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_dc0fd52e1899a97c1d61d110dcb5f926 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_719e3e54e66912f4ac550f95f2e08a84 = $(`<div id="html_719e3e54e66912f4ac550f95f2e08a84" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ AJOUPA BOUILLON</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.004 mg/kg<br>         <b>Taux moyen :</b> 0.303 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 9.8%<br>         <b>Nb prélèvements :</b> 1037<br>     </div>     </div>`)[0];
+                popup_dc0fd52e1899a97c1d61d110dcb5f926.setContent(html_719e3e54e66912f4ac550f95f2e08a84);
+            
+        
+
+        circle_marker_ebe2db25f95c4175dd134a9436831214.bindPopup(popup_dc0fd52e1899a97c1d61d110dcb5f926)
+        ;
+
+        
+    
+    
+            circle_marker_ebe2db25f95c4175dd134a9436831214.bindTooltip(
+                `<div>
+                     AJOUPA BOUILLON — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_46afd01926ffb68fdfcc1e2ed556dbf7 = L.marker(
+                [14.811819484899276, -61.127274141828025],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_9d65d89a8fecf1fbc0ff5fe6b9caff1b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eAJOUPA BOUILLON\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_46afd01926ffb68fdfcc1e2ed556dbf7.setIcon(div_icon_9d65d89a8fecf1fbc0ff5fe6b9caff1b);
+            
+    
+            var circle_marker_88b1dcbb6ce9ca9e4fe9e27149e08d8a = L.circleMarker(
+                [14.499069560619828, -61.07059654896318],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_21be92eac3adb20ddf8e38678acdf754 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_bda4dbd8471b84067efbdd8878d701e3 = $(`<div id="html_bda4dbd8471b84067efbdd8878d701e3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ ANSES-D'ARLET(LES)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.001 mg/kg<br>         <b>Taux moyen :</b> 0.008 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 241<br>     </div>     </div>`)[0];
+                popup_21be92eac3adb20ddf8e38678acdf754.setContent(html_bda4dbd8471b84067efbdd8878d701e3);
+            
+        
+
+        circle_marker_88b1dcbb6ce9ca9e4fe9e27149e08d8a.bindPopup(popup_21be92eac3adb20ddf8e38678acdf754)
+        ;
+
+        
+    
+    
+            circle_marker_88b1dcbb6ce9ca9e4fe9e27149e08d8a.bindTooltip(
+                `<div>
+                     ANSES-D'ARLET(LES) — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9a5bf0bae9fa481b81d11aa0a0b194fd = L.marker(
+                [14.499069560619828, -61.07059654896318],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_2996eeed85e204e2ff8bc08c799e8269 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eANSES-D\u0027ARLET(LES)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_9a5bf0bae9fa481b81d11aa0a0b194fd.setIcon(div_icon_2996eeed85e204e2ff8bc08c799e8269);
+            
+    
+            var circle_marker_da633088fd79974139575df9d2c622bc = L.circleMarker(
+                [14.845137526205852, -61.12096646026576],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#309f56ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.442540322580646, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_6fbbcd2a70e5feee952b64e567887ef1 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_b766489c0e9ef88037d9ebf4e8435924 = $(`<div id="html_b766489c0e9ef88037d9ebf4e8435924" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ BASSE-POINTE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.090 mg/kg<br>         <b>Taux moyen :</b> 1.381 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 33.8%<br>         <b>Nb prélèvements :</b> 992<br>     </div>     </div>`)[0];
+                popup_6fbbcd2a70e5feee952b64e567887ef1.setContent(html_b766489c0e9ef88037d9ebf4e8435924);
+            
+        
+
+        circle_marker_da633088fd79974139575df9d2c622bc.bindPopup(popup_6fbbcd2a70e5feee952b64e567887ef1)
+        ;
+
+        
+    
+    
+            circle_marker_da633088fd79974139575df9d2c622bc.bindTooltip(
+                `<div>
+                     BASSE-POINTE — médiane : 0.09 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_68c5a66cc09ee860061556012ca8d194 = L.marker(
+                [14.845137526205852, -61.12096646026576],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_d0e0053566fb1805e6926ac90ca80c6f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eBASSE-POINTE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_68c5a66cc09ee860061556012ca8d194.setIcon(div_icon_d0e0053566fb1805e6926ac90ca80c6f);
+            
+    
+            var circle_marker_e84531cf38ab0dd53ac71aa8081d96ba = L.circleMarker(
+                [14.678166709336782, -61.15019118653495],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_fb307a8c9d840b81b20393ef786d696c = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_da3c5af18a563b1f21daad1de968c8b4 = $(`<div id="html_da3c5af18a563b1f21daad1de968c8b4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ BELLEFONTAINE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.002 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 154<br>     </div>     </div>`)[0];
+                popup_fb307a8c9d840b81b20393ef786d696c.setContent(html_da3c5af18a563b1f21daad1de968c8b4);
+            
+        
+
+        circle_marker_e84531cf38ab0dd53ac71aa8081d96ba.bindPopup(popup_fb307a8c9d840b81b20393ef786d696c)
+        ;
+
+        
+    
+    
+            circle_marker_e84531cf38ab0dd53ac71aa8081d96ba.bindTooltip(
+                `<div>
+                     BELLEFONTAINE — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_02d9b96d958711cdc14302633b4cb14a = L.marker(
+                [14.678166709336782, -61.15019118653495],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_bd1ec024c94b1f559caeeecc93464eb5 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eBELLEFONTAINE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_02d9b96d958711cdc14302633b4cb14a.setIcon(div_icon_bd1ec024c94b1f559caeeecc93464eb5);
+            
+    
+            var circle_marker_bdc96dc34cf7dd80759cd18d9cd03934 = L.circleMarker(
+                [14.714669045516176, -61.16732273984366],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.161987041036717, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_e7c41097e8eec909426db188bc95536e = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_f2821b098097f45c08984042d237cb30 = $(`<div id="html_f2821b098097f45c08984042d237cb30" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ CARBET(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.025 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.6%<br>         <b>Nb prélèvements :</b> 463<br>     </div>     </div>`)[0];
+                popup_e7c41097e8eec909426db188bc95536e.setContent(html_f2821b098097f45c08984042d237cb30);
+            
+        
+
+        circle_marker_bdc96dc34cf7dd80759cd18d9cd03934.bindPopup(popup_e7c41097e8eec909426db188bc95536e)
+        ;
+
+        
+    
+    
+            circle_marker_bdc96dc34cf7dd80759cd18d9cd03934.bindTooltip(
+                `<div>
+                     CARBET(LE) — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9a93a31722e42d16ad69b0965109d10c = L.marker(
+                [14.714669045516176, -61.16732273984366],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_0b9a5da2c4fe35b42406a262f31c6f6c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eCARBET(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_9a93a31722e42d16ad69b0965109d10c.setIcon(div_icon_0b9a5da2c4fe35b42406a262f31c6f6c);
+            
+    
+            var circle_marker_89891aeca1df5f000c197550dc008e2b = L.circleMarker(
+                [14.64917342305049, -61.128432628218135],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_a728e13ff434c1d615c066536a9dc20b = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_18f3c03df3c394299446480f0a0f7d11 = $(`<div id="html_18f3c03df3c394299446480f0a0f7d11" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ CASE-PILOTE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.001 mg/kg<br>         <b>Taux moyen :</b> 0.003 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 194<br>     </div>     </div>`)[0];
+                popup_a728e13ff434c1d615c066536a9dc20b.setContent(html_18f3c03df3c394299446480f0a0f7d11);
+            
+        
+
+        circle_marker_89891aeca1df5f000c197550dc008e2b.bindPopup(popup_a728e13ff434c1d615c066536a9dc20b)
+        ;
+
+        
+    
+    
+            circle_marker_89891aeca1df5f000c197550dc008e2b.bindTooltip(
+                `<div>
+                     CASE-PILOTE — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_713b8316efc9fa640d12fc8e8017e5e2 = L.marker(
+                [14.64917342305049, -61.128432628218135],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_b69cf0582f741a9d11b0c94286e0b410 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eCASE-PILOTE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_713b8316efc9fa640d12fc8e8017e5e2.setIcon(div_icon_b69cf0582f741a9d11b0c94286e0b410);
+            
+    
+            var circle_marker_1819f56bfa7b9b81bdeed095a73c681a = L.circleMarker(
+                [14.488331042359851, -61.023105462434586],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_ab0b7afe58113a430de1e693067af4d7 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_5dcc97ef07f2b9bdad321d37c7e8c351 = $(`<div id="html_5dcc97ef07f2b9bdad321d37c7e8c351" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ DIAMANT(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.001 mg/kg<br>         <b>Taux moyen :</b> 0.003 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 210<br>     </div>     </div>`)[0];
+                popup_ab0b7afe58113a430de1e693067af4d7.setContent(html_5dcc97ef07f2b9bdad321d37c7e8c351);
+            
+        
+
+        circle_marker_1819f56bfa7b9b81bdeed095a73c681a.bindPopup(popup_ab0b7afe58113a430de1e693067af4d7)
+        ;
+
+        
+    
+    
+            circle_marker_1819f56bfa7b9b81bdeed095a73c681a.bindTooltip(
+                `<div>
+                     DIAMANT(LE) — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5ce26f7ec21f9f152c030d63bb80f98f = L.marker(
+                [14.488331042359851, -61.023105462434586],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_38440c1d3e5a200ef78b444d5b0f808f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eDIAMANT(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_5ce26f7ec21f9f152c030d63bb80f98f.setIcon(div_icon_38440c1d3e5a200ef78b444d5b0f808f);
+            
+    
+            var circle_marker_328622f4c5263f948f9ff548c16f5932 = L.circleMarker(
+                [14.584434157514647, -60.95803565194491],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.7542426147077315, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_e6c2affc50afd24c72eb547217bf1e88 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_41d56d26c090d01bb778afe04a4176e6 = $(`<div id="html_41d56d26c090d01bb778afe04a4176e6" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ DUCOS</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.128 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 3.0%<br>         <b>Nb prélèvements :</b> 1591<br>     </div>     </div>`)[0];
+                popup_e6c2affc50afd24c72eb547217bf1e88.setContent(html_41d56d26c090d01bb778afe04a4176e6);
+            
+        
+
+        circle_marker_328622f4c5263f948f9ff548c16f5932.bindPopup(popup_e6c2affc50afd24c72eb547217bf1e88)
+        ;
+
+        
+    
+    
+            circle_marker_328622f4c5263f948f9ff548c16f5932.bindTooltip(
+                `<div>
+                     DUCOS — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d22685a19eeca1ffcf1fd1ab1a26c3b1 = L.marker(
+                [14.584434157514647, -60.95803565194491],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_8e801db54c1005d415ef62359782ba58 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eDUCOS\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_d22685a19eeca1ffcf1fd1ab1a26c3b1.setIcon(div_icon_8e801db54c1005d415ef62359782ba58);
+            
+    
+            var circle_marker_43bb35edbdba5c2d2a0995165fe3bb0b = L.circleMarker(
+                [14.738322605859182, -61.13792815090478],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_09bbb8304226782e13223af8a1f6bc7f = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_36a4aef1d78ca16209313ba26f74960c = $(`<div id="html_36a4aef1d78ca16209313ba26f74960c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ FONDS-SAINT-DENIS</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.077 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 214<br>     </div>     </div>`)[0];
+                popup_09bbb8304226782e13223af8a1f6bc7f.setContent(html_36a4aef1d78ca16209313ba26f74960c);
+            
+        
+
+        circle_marker_43bb35edbdba5c2d2a0995165fe3bb0b.bindPopup(popup_09bbb8304226782e13223af8a1f6bc7f)
+        ;
+
+        
+    
+    
+            circle_marker_43bb35edbdba5c2d2a0995165fe3bb0b.bindTooltip(
+                `<div>
+                     FONDS-SAINT-DENIS — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_523b8b01be69a909c3af99ce638ebd76 = L.marker(
+                [14.738322605859182, -61.13792815090478],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_9eaca251819bb9b90a313d418ea14d8b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eFONDS-SAINT-DENIS\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_523b8b01be69a909c3af99ce638ebd76.setIcon(div_icon_9eaca251819bb9b90a313d418ea14d8b);
+            
+    
+            var circle_marker_5c47b8a871246e867f8743cfb2a84f7b = L.circleMarker(
+                [14.642700596812102, -61.06488480634946],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_49e7b15d4f14c71bc86230fe6108f33c = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_5aec9163725323ff18420c225e3b46bd = $(`<div id="html_5aec9163725323ff18420c225e3b46bd" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ FORT-DE-FRANCE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.001 mg/kg<br>         <b>Taux moyen :</b> 0.012 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 608<br>     </div>     </div>`)[0];
+                popup_49e7b15d4f14c71bc86230fe6108f33c.setContent(html_5aec9163725323ff18420c225e3b46bd);
+            
+        
+
+        circle_marker_5c47b8a871246e867f8743cfb2a84f7b.bindPopup(popup_49e7b15d4f14c71bc86230fe6108f33c)
+        ;
+
+        
+    
+    
+            circle_marker_5c47b8a871246e867f8743cfb2a84f7b.bindTooltip(
+                `<div>
+                     FORT-DE-FRANCE — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e40f7c66e39ad01000c6fbccc5800345 = L.marker(
+                [14.642700596812102, -61.06488480634946],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_73acea583ee3bb7633b1e4f8648f3286 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eFORT-DE-FRANCE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_e40f7c66e39ad01000c6fbccc5800345.setIcon(div_icon_73acea583ee3bb7633b1e4f8648f3286);
+            
+    
+            var circle_marker_eff26a4b070de1dbc2e3abea8826e42c = L.circleMarker(
+                [14.604778267662057, -60.911844270885204],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.668914362778152, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_77ca32050a7f1b9bc7eae09864502832 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_249bcb6fd3d5cfcb63eebbc4c7773fdf = $(`<div id="html_249bcb6fd3d5cfcb63eebbc4c7773fdf" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ FRANCOIS(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.224 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 6.7%<br>         <b>Nb prélèvements :</b> 1483<br>     </div>     </div>`)[0];
+                popup_77ca32050a7f1b9bc7eae09864502832.setContent(html_249bcb6fd3d5cfcb63eebbc4c7773fdf);
+            
+        
+
+        circle_marker_eff26a4b070de1dbc2e3abea8826e42c.bindPopup(popup_77ca32050a7f1b9bc7eae09864502832)
+        ;
+
+        
+    
+    
+            circle_marker_eff26a4b070de1dbc2e3abea8826e42c.bindTooltip(
+                `<div>
+                     FRANCOIS(LE) — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8bb10a8c56fe5bd49046020e51072eb7 = L.marker(
+                [14.604778267662057, -60.911844270885204],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_433057adb6b47acdf37ec0dc12177326 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eFRANCOIS(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_8bb10a8c56fe5bd49046020e51072eb7.setIcon(div_icon_433057adb6b47acdf37ec0dc12177326);
+            
+    
+            var circle_marker_679a6938dcf8399288653a8591e6332a = L.circleMarker(
+                [14.870621468928613, -61.17419726809236],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6db265ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.2, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_e19d11a749ec59328b179ceb831a059b = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_f1026326a85744d1d153829baf9e708b = $(`<div id="html_f1026326a85744d1d153829baf9e708b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ GRAND'RIVIERE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.336 mg/kg<br>         <b>Taux moyen :</b> 1.840 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 36.8%<br>         <b>Nb prélèvements :</b> 125<br>     </div>     </div>`)[0];
+                popup_e19d11a749ec59328b179ceb831a059b.setContent(html_f1026326a85744d1d153829baf9e708b);
+            
+        
+
+        circle_marker_679a6938dcf8399288653a8591e6332a.bindPopup(popup_e19d11a749ec59328b179ceb831a059b)
+        ;
+
+        
+    
+    
+            circle_marker_679a6938dcf8399288653a8591e6332a.bindTooltip(
+                `<div>
+                     GRAND'RIVIERE — médiane : 0.34 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1408618d1a84690582a7c8eca62410c7 = L.marker(
+                [14.870621468928613, -61.17419726809236],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_57ae4eaa7c1fe218e6351e6ee82b479e = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eGRAND\u0027RIVIERE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_1408618d1a84690582a7c8eca62410c7.setIcon(div_icon_57ae4eaa7c1fe218e6351e6ee82b479e);
+            
+    
+            var circle_marker_e5823a761180dd089d6baf9587704692 = L.circleMarker(
+                [14.707378120761014, -61.01740375360856],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.419493549928333, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_e946c11f9b575282d492d30256d3cdba = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_ecc745c169c1bbf9d5802c76f349e114 = $(`<div id="html_ecc745c169c1bbf9d5802c76f349e114" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ GROS-MORNE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.547 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 17.7%<br>         <b>Nb prélèvements :</b> 2093<br>     </div>     </div>`)[0];
+                popup_e946c11f9b575282d492d30256d3cdba.setContent(html_ecc745c169c1bbf9d5802c76f349e114);
+            
+        
+
+        circle_marker_e5823a761180dd089d6baf9587704692.bindPopup(popup_e946c11f9b575282d492d30256d3cdba)
+        ;
+
+        
+    
+    
+            circle_marker_e5823a761180dd089d6baf9587704692.bindTooltip(
+                `<div>
+                     GROS-MORNE — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cc829fcc256bb4978634433cc69d0a13 = L.marker(
+                [14.707378120761014, -61.01740375360856],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_adcab710ac3c14d4da481677c8420b09 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eGROS-MORNE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_cc829fcc256bb4978634433cc69d0a13.setIcon(div_icon_adcab710ac3c14d4da481677c8420b09);
+            
+    
+            var circle_marker_96a523fbfd32b0e2b72c91ac60371ad5 = L.circleMarker(
+                [14.542819827922893, -60.978508845353545],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#299d54ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_619bde142bfdc52a809d449b28473997 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_22db80d0f894d91c5d8a62f5beee4a2a = $(`<div id="html_22db80d0f894d91c5d8a62f5beee4a2a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ Hors Martinique</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.063 mg/kg<br>         <b>Taux moyen :</b> 0.082 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 27<br>     </div>     </div>`)[0];
+                popup_619bde142bfdc52a809d449b28473997.setContent(html_22db80d0f894d91c5d8a62f5beee4a2a);
+            
+        
+
+        circle_marker_96a523fbfd32b0e2b72c91ac60371ad5.bindPopup(popup_619bde142bfdc52a809d449b28473997)
+        ;
+
+        
+    
+    
+            circle_marker_96a523fbfd32b0e2b72c91ac60371ad5.bindTooltip(
+                `<div>
+                     Hors Martinique — médiane : 0.06 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a38514ef3f9c8b3d608e47d813f3c16c = L.marker(
+                [14.542819827922893, -60.978508845353545],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_9b2b114bc15ca445171d38849f705985 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eHors Martinique\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_a38514ef3f9c8b3d608e47d813f3c16c.setIcon(div_icon_9b2b114bc15ca445171d38849f705985);
+            
+    
+            var circle_marker_2283b756995287cccb7ac9c1c7e8c5c4 = L.circleMarker(
+                [14.639004536243581, -60.987341079424056],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.341968911917098, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_5dc42c66d9ac4fa12c2364a23e64cafe = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_5fad4deea3a9b4c3dc4a07dfc9c5287a = $(`<div id="html_5fad4deea3a9b4c3dc4a07dfc9c5287a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ LAMENTIN(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.442 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 13.4%<br>         <b>Nb prélèvements :</b> 1930<br>     </div>     </div>`)[0];
+                popup_5dc42c66d9ac4fa12c2364a23e64cafe.setContent(html_5fad4deea3a9b4c3dc4a07dfc9c5287a);
+            
+        
+
+        circle_marker_2283b756995287cccb7ac9c1c7e8c5c4.bindPopup(popup_5dc42c66d9ac4fa12c2364a23e64cafe)
+        ;
+
+        
+    
+    
+            circle_marker_2283b756995287cccb7ac9c1c7e8c5c4.bindTooltip(
+                `<div>
+                     LAMENTIN(LE) — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8895f0c8c9a9b3e6c87d17fbec0cec19 = L.marker(
+                [14.639004536243581, -60.987341079424056],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_14072dc6fc6cc1be49af770d0389a1f8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eLAMENTIN(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_8895f0c8c9a9b3e6c87d17fbec0cec19.setIcon(div_icon_14072dc6fc6cc1be49af770d0389a1f8);
+            
+    
+            var circle_marker_f902a94e27708fbecf69ec91742c7092 = L.circleMarker(
+                [14.817285539065251, -61.07173374464972],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#47a75cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.062960862166761, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_636ad183c56de30091646470a0fd8dc9 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_b8b631de212435223bf258afa6a2e0ce = $(`<div id="html_b8b631de212435223bf258afa6a2e0ce" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ LORRAIN(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.185 mg/kg<br>         <b>Taux moyen :</b> 0.584 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 12.3%<br>         <b>Nb prélèvements :</b> 1763<br>     </div>     </div>`)[0];
+                popup_636ad183c56de30091646470a0fd8dc9.setContent(html_b8b631de212435223bf258afa6a2e0ce);
+            
+        
+
+        circle_marker_f902a94e27708fbecf69ec91742c7092.bindPopup(popup_636ad183c56de30091646470a0fd8dc9)
+        ;
+
+        
+    
+    
+            circle_marker_f902a94e27708fbecf69ec91742c7092.bindTooltip(
+                `<div>
+                     LORRAIN(LE) — médiane : 0.18 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4d7ce6acd4509e513a23553e0a2aa53f = L.marker(
+                [14.817285539065251, -61.07173374464972],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_87616ce9a60f0cafc26f76de9a31ea7a = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eLORRAIN(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_4d7ce6acd4509e513a23553e0a2aa53f.setIcon(div_icon_87616ce9a60f0cafc26f76de9a31ea7a);
+            
+    
+            var circle_marker_4db627feb30620d6ba7f797d9a36062f = L.circleMarker(
+                [14.860080053613078, -61.140506029221726],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f8985dff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21.26074498567335, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_6499f599c369a3e695fb8213835704e5 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_d8920a29bed57a36d36eb213f00729f3 = $(`<div id="html_d8920a29bed57a36d36eb213f00729f3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ MACOUBA</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 1.500 mg/kg<br>         <b>Taux moyen :</b> 1.697 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 65.0%<br>         <b>Nb prélèvements :</b> 698<br>     </div>     </div>`)[0];
+                popup_6499f599c369a3e695fb8213835704e5.setContent(html_d8920a29bed57a36d36eb213f00729f3);
+            
+        
+
+        circle_marker_4db627feb30620d6ba7f797d9a36062f.bindPopup(popup_6499f599c369a3e695fb8213835704e5)
+        ;
+
+        
+    
+    
+            circle_marker_4db627feb30620d6ba7f797d9a36062f.bindTooltip(
+                `<div>
+                     MACOUBA — médiane : 1.50 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_442f354d1f67cdf35fd3749814de601c = L.marker(
+                [14.860080053613078, -61.140506029221726],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_abd0dbae3bfe030adead48d334c8c687 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eMACOUBA\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_442f354d1f67cdf35fd3749814de601c.setIcon(div_icon_abd0dbae3bfe030adead48d334c8c687);
+            
+    
+            var circle_marker_9bfd4f5a46fdbf772730bc77ee1dc737 = L.circleMarker(
+                [14.805573872068342, -61.038574385690985],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#38a258ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.105263157894736, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_333728f89dcef48bfe4409725eb4fbb7 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_6df06240e1147ffcfad1ba08bb9d9c6b = $(`<div id="html_6df06240e1147ffcfad1ba08bb9d9c6b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ MARIGOT(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.125 mg/kg<br>         <b>Taux moyen :</b> 0.613 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 28.4%<br>         <b>Nb prélèvements :</b> 475<br>     </div>     </div>`)[0];
+                popup_333728f89dcef48bfe4409725eb4fbb7.setContent(html_6df06240e1147ffcfad1ba08bb9d9c6b);
+            
+        
+
+        circle_marker_9bfd4f5a46fdbf772730bc77ee1dc737.bindPopup(popup_333728f89dcef48bfe4409725eb4fbb7)
+        ;
+
+        
+    
+    
+            circle_marker_9bfd4f5a46fdbf772730bc77ee1dc737.bindTooltip(
+                `<div>
+                     MARIGOT(LE) — médiane : 0.12 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_293f02822e6ba8a40fa52705b727bb8b = L.marker(
+                [14.805573872068342, -61.038574385690985],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_a48616ed7c96c789c31497ae6cad1df8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eMARIGOT(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_293f02822e6ba8a40fa52705b727bb8b.setIcon(div_icon_a48616ed7c96c789c31497ae6cad1df8);
+            
+    
+            var circle_marker_62f0a787c966c9711cf03c3afa90f8b2 = L.circleMarker(
+                [14.488850773800069, -60.85707261762125],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.074498567335244, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_d80293ce222db2e2fe126600624745ee = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_06c36fb0db9419a3534d31cb8845c8a1 = $(`<div id="html_06c36fb0db9419a3534d31cb8845c8a1" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ MARIN(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.171 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 4.3%<br>         <b>Nb prélèvements :</b> 349<br>     </div>     </div>`)[0];
+                popup_d80293ce222db2e2fe126600624745ee.setContent(html_06c36fb0db9419a3534d31cb8845c8a1);
+            
+        
+
+        circle_marker_62f0a787c966c9711cf03c3afa90f8b2.bindPopup(popup_d80293ce222db2e2fe126600624745ee)
+        ;
+
+        
+    
+    
+            circle_marker_62f0a787c966c9711cf03c3afa90f8b2.bindTooltip(
+                `<div>
+                     MARIN(LE) — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_776598289b7f54507447fd93d32eed70 = L.marker(
+                [14.488850773800069, -60.85707261762125],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_f7a987f8051095e029a39307979335f0 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eMARIN(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_776598289b7f54507447fd93d32eed70.setIcon(div_icon_f7a987f8051095e029a39307979335f0);
+            
+    
+            var circle_marker_75b76098fb83441161fc6196af99578a = L.circleMarker(
+                [14.76639281983378, -61.13431259460592],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50026ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.825503355704697, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_592a33e98c8b107faaa0a02dfa34e464 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_fefaa463b5430535ac95e161568ca7a9 = $(`<div id="html_fefaa463b5430535ac95e161568ca7a9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ MORNE-ROUGE(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 2.758 mg/kg<br>         <b>Taux moyen :</b> 2.800 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 63.3%<br>         <b>Nb prélèvements :</b> 3725<br>     </div>     </div>`)[0];
+                popup_592a33e98c8b107faaa0a02dfa34e464.setContent(html_fefaa463b5430535ac95e161568ca7a9);
+            
+        
+
+        circle_marker_75b76098fb83441161fc6196af99578a.bindPopup(popup_592a33e98c8b107faaa0a02dfa34e464)
+        ;
+
+        
+    
+    
+            circle_marker_75b76098fb83441161fc6196af99578a.bindTooltip(
+                `<div>
+                     MORNE-ROUGE(LE) — médiane : 2.76 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_be042c15e508f5949bbad31303aae0b9 = L.marker(
+                [14.76639281983378, -61.13431259460592],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_ad410f47e05cfde889b03643f7403bd6 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eMORNE-ROUGE(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_be042c15e508f5949bbad31303aae0b9.setIcon(div_icon_ad410f47e05cfde889b03643f7403bd6);
+            
+    
+            var circle_marker_37d9dd5e90f798d466a8216fa4a96576 = L.circleMarker(
+                [14.702503678750858, -61.136992799057886],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_3d1904beed6908b74048c3267167d2f7 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_42fe9d353c93fbc80a2a37194990cf76 = $(`<div id="html_42fe9d353c93fbc80a2a37194990cf76" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ MORNE-VERT(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.003 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 244<br>     </div>     </div>`)[0];
+                popup_3d1904beed6908b74048c3267167d2f7.setContent(html_42fe9d353c93fbc80a2a37194990cf76);
+            
+        
+
+        circle_marker_37d9dd5e90f798d466a8216fa4a96576.bindPopup(popup_3d1904beed6908b74048c3267167d2f7)
+        ;
+
+        
+    
+    
+            circle_marker_37d9dd5e90f798d466a8216fa4a96576.bindTooltip(
+                `<div>
+                     MORNE-VERT(LE) — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2ddb09baa2c5fa7019f91d5cd3efe4be = L.marker(
+                [14.702503678750858, -61.136992799057886],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_81ca6c881132a85f278abc3418e9da36 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eMORNE-VERT(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_2ddb09baa2c5fa7019f91d5cd3efe4be.setIcon(div_icon_81ca6c881132a85f278abc3418e9da36);
+            
+    
+            var circle_marker_dce86f58adcb63e0fc36c926a6a1a011 = L.circleMarker(
+                [14.805994576332383, -61.21502972393388],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.545851528384279, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_e9d2161be49ad793df2b93c079bcbea2 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_12d77e33244e12c4f3cfd4075831b432 = $(`<div id="html_12d77e33244e12c4f3cfd4075831b432" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ PRECHEUR(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.088 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 2.2%<br>         <b>Nb prélèvements :</b> 229<br>     </div>     </div>`)[0];
+                popup_e9d2161be49ad793df2b93c079bcbea2.setContent(html_12d77e33244e12c4f3cfd4075831b432);
+            
+        
+
+        circle_marker_dce86f58adcb63e0fc36c926a6a1a011.bindPopup(popup_e9d2161be49ad793df2b93c079bcbea2)
+        ;
+
+        
+    
+    
+            circle_marker_dce86f58adcb63e0fc36c926a6a1a011.bindTooltip(
+                `<div>
+                     PRECHEUR(LE) — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2c7ac8b3b7312aa90c3cbd6d9f46a4b7 = L.marker(
+                [14.805994576332383, -61.21502972393388],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_857c8ab1cea8f5afaf53faf1873e6ae8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003ePRECHEUR(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_2c7ac8b3b7312aa90c3cbd6d9f46a4b7.setIcon(div_icon_857c8ab1cea8f5afaf53faf1873e6ae8);
+            
+    
+            var circle_marker_427e1f2e1bf52068d7cdecf01c721461 = L.circleMarker(
+                [14.518151549379109, -60.897586412885445],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.209907640638119, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_1c5f958395a31bb302194bee6beb39bc = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_ee3be78ff7c9d0eba715a75ef31cdd12 = $(`<div id="html_ee3be78ff7c9d0eba715a75ef31cdd12" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ RIVIERE-PILOTE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.098 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.8%<br>         <b>Nb prélèvements :</b> 1191<br>     </div>     </div>`)[0];
+                popup_1c5f958395a31bb302194bee6beb39bc.setContent(html_ee3be78ff7c9d0eba715a75ef31cdd12);
+            
+        
+
+        circle_marker_427e1f2e1bf52068d7cdecf01c721461.bindPopup(popup_1c5f958395a31bb302194bee6beb39bc)
+        ;
+
+        
+    
+    
+            circle_marker_427e1f2e1bf52068d7cdecf01c721461.bindTooltip(
+                `<div>
+                     RIVIERE-PILOTE — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_54561ad7f0a39e3fcc03950fb0afa392 = L.marker(
+                [14.518151549379109, -60.897586412885445],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_b5542dd5ce93baf08d172d1a36f87ed6 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eRIVIERE-PILOTE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_54561ad7f0a39e3fcc03950fb0afa392.setIcon(div_icon_b5542dd5ce93baf08d172d1a36f87ed6);
+            
+    
+            var circle_marker_1ad2014a163f7c52762342118758fc14 = L.circleMarker(
+                [14.528018623081373, -60.951513870554926],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.751937984496124, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_ea7f436a4623a8cec68796bf8193e0c1 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_04849ac636f06cc44b997673c9d42bf7 = $(`<div id="html_04849ac636f06cc44b997673c9d42bf7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ RIVIERE-SALEE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.174 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 11.0%<br>         <b>Nb prélèvements :</b> 645<br>     </div>     </div>`)[0];
+                popup_ea7f436a4623a8cec68796bf8193e0c1.setContent(html_04849ac636f06cc44b997673c9d42bf7);
+            
+        
+
+        circle_marker_1ad2014a163f7c52762342118758fc14.bindPopup(popup_ea7f436a4623a8cec68796bf8193e0c1)
+        ;
+
+        
+    
+    
+            circle_marker_1ad2014a163f7c52762342118758fc14.bindTooltip(
+                `<div>
+                     RIVIERE-SALEE — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b164380d274d126a65a751a7652c6193 = L.marker(
+                [14.528018623081373, -60.951513870554926],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_f1f3cc38c87f37b5ee0f0dca17bacb53 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eRIVIERE-SALEE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_b164380d274d126a65a751a7652c6193.setIcon(div_icon_f1f3cc38c87f37b5ee0f0dca17bacb53);
+            
+    
+            var circle_marker_ed988610e587450fb15e41abdb40cc6e = L.circleMarker(
+                [14.673591412699412, -60.95393389409232],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.041666666666666, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_eda7d218e16d5ce3b4a63adc65ce6982 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_511d086211adb4ff3f8f8bfa0dd37cb0 = $(`<div id="html_511d086211adb4ff3f8f8bfa0dd37cb0" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ ROBERT(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.168 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 4.2%<br>         <b>Nb prélèvements :</b> 1728<br>     </div>     </div>`)[0];
+                popup_eda7d218e16d5ce3b4a63adc65ce6982.setContent(html_511d086211adb4ff3f8f8bfa0dd37cb0);
+            
+        
+
+        circle_marker_ed988610e587450fb15e41abdb40cc6e.bindPopup(popup_eda7d218e16d5ce3b4a63adc65ce6982)
+        ;
+
+        
+    
+    
+            circle_marker_ed988610e587450fb15e41abdb40cc6e.bindTooltip(
+                `<div>
+                     ROBERT(LE) — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d689462ce875885336389d20ba4d3a1f = L.marker(
+                [14.673591412699412, -60.95393389409232],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_43881abd73e1416a3fb7c53fcf1c9a33 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eROBERT(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_d689462ce875885336389d20ba4d3a1f.setIcon(div_icon_43881abd73e1416a3fb7c53fcf1c9a33);
+            
+    
+            var circle_marker_c7daeab3ea0505261a4468469e18cba9 = L.circleMarker(
+                [14.55633071125093, -60.91748949779853],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#239b52ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.189519023689877, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_d363a7783e6ece6145daec7218a28f36 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_9cbcc2f7ee881badec9897aa3eb3faa2 = $(`<div id="html_9cbcc2f7ee881badec9897aa3eb3faa2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ SAINT-ESPRIT</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.040 mg/kg<br>         <b>Taux moyen :</b> 0.333 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 8.8%<br>         <b>Nb prélèvements :</b> 1393<br>     </div>     </div>`)[0];
+                popup_d363a7783e6ece6145daec7218a28f36.setContent(html_9cbcc2f7ee881badec9897aa3eb3faa2);
+            
+        
+
+        circle_marker_c7daeab3ea0505261a4468469e18cba9.bindPopup(popup_d363a7783e6ece6145daec7218a28f36)
+        ;
+
+        
+    
+    
+            circle_marker_c7daeab3ea0505261a4468469e18cba9.bindTooltip(
+                `<div>
+                     SAINT-ESPRIT — médiane : 0.04 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_39b67295695b62f2fab5562b64c3bc62 = L.marker(
+                [14.55633071125093, -60.91748949779853],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_43ee0ef6c2c58d0c8282b9ed7c3b33ad = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eSAINT-ESPRIT\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_39b67295695b62f2fab5562b64c3bc62.setIcon(div_icon_43ee0ef6c2c58d0c8282b9ed7c3b33ad);
+            
+    
+            var circle_marker_d72b5c03995bb2fa39a4a57b3d7a5f34 = L.circleMarker(
+                [14.668021247262814, -61.036860001947005],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.408195848855774, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_d2098827074a2ab7eb4fff9f70b01518 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_4f24430361343d83e69f8a618aa0e038 = $(`<div id="html_4f24430361343d83e69f8a618aa0e038" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ SAINT-JOSEPH</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.269 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 9.6%<br>         <b>Nb prélèvements :</b> 1879<br>     </div>     </div>`)[0];
+                popup_d2098827074a2ab7eb4fff9f70b01518.setContent(html_4f24430361343d83e69f8a618aa0e038);
+            
+        
+
+        circle_marker_d72b5c03995bb2fa39a4a57b3d7a5f34.bindPopup(popup_d2098827074a2ab7eb4fff9f70b01518)
+        ;
+
+        
+    
+    
+            circle_marker_d72b5c03995bb2fa39a4a57b3d7a5f34.bindTooltip(
+                `<div>
+                     SAINT-JOSEPH — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b4d1f8b618b7479a40e68f5fc0f58dea = L.marker(
+                [14.668021247262814, -61.036860001947005],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_22c439bc2582cd56bee8af158af1c888 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eSAINT-JOSEPH\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_b4d1f8b618b7479a40e68f5fc0f58dea.setIcon(div_icon_22c439bc2582cd56bee8af158af1c888);
+            
+    
+            var circle_marker_2ac6241d2035b35a4eb404245f671c13 = L.circleMarker(
+                [14.755966375784576, -61.170485651891454],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.129793510324482, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_f86c937dcbbacbaee4aa6f0ec9004bea = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_8e7158a2d0861113e22ee81bba36dcff = $(`<div id="html_8e7158a2d0861113e22ee81bba36dcff" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ SAINT-PIERRE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.005 mg/kg<br>         <b>Taux moyen :</b> 0.561 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 16.5%<br>         <b>Nb prélèvements :</b> 339<br>     </div>     </div>`)[0];
+                popup_f86c937dcbbacbaee4aa6f0ec9004bea.setContent(html_8e7158a2d0861113e22ee81bba36dcff);
+            
+        
+
+        circle_marker_2ac6241d2035b35a4eb404245f671c13.bindPopup(popup_f86c937dcbbacbaee4aa6f0ec9004bea)
+        ;
+
+        
+    
+    
+            circle_marker_2ac6241d2035b35a4eb404245f671c13.bindTooltip(
+                `<div>
+                     SAINT-PIERRE — médiane : 0.01 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3197bd2fe215759a4f92b0b4642d9e41 = L.marker(
+                [14.755966375784576, -61.170485651891454],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_cdd6cd616b04afd6c93fc9321539e390 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eSAINT-PIERRE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_3197bd2fe215759a4f92b0b4642d9e41.setIcon(div_icon_cdd6cd616b04afd6c93fc9321539e390);
+            
+    
+            var circle_marker_568f45593d9e2966b8d5853225e7bf36 = L.circleMarker(
+                [14.440616965968914, -60.85725536678594],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_dda27b1d03c4c7386d74efcbc7b276c3 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_225c695404feed11ca92b7ccc3bec2f0 = $(`<div id="html_225c695404feed11ca92b7ccc3bec2f0" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ SAINTE-ANNE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.002 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 263<br>     </div>     </div>`)[0];
+                popup_dda27b1d03c4c7386d74efcbc7b276c3.setContent(html_225c695404feed11ca92b7ccc3bec2f0);
+            
+        
+
+        circle_marker_568f45593d9e2966b8d5853225e7bf36.bindPopup(popup_dda27b1d03c4c7386d74efcbc7b276c3)
+        ;
+
+        
+    
+    
+            circle_marker_568f45593d9e2966b8d5853225e7bf36.bindTooltip(
+                `<div>
+                     SAINTE-ANNE — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a33de9105e6a6eff794efbefe1b511c9 = L.marker(
+                [14.440616965968914, -60.85725536678594],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_f5396a503938411a12a4adc4e78aedb4 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eSAINTE-ANNE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_a33de9105e6a6eff794efbefe1b511c9.setIcon(div_icon_f5396a503938411a12a4adc4e78aedb4);
+            
+    
+            var circle_marker_f22e1cd6707dfea713bb37ff9228fa03 = L.circleMarker(
+                [14.488635197861587, -60.94559957879414],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_dacff90a809d4c80eb942f80ed1fb1de = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_aaca21f2b644057b5e8a8ca9e1c96f0d = $(`<div id="html_aaca21f2b644057b5e8a8ca9e1c96f0d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ SAINTE-LUCE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.029 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 492<br>     </div>     </div>`)[0];
+                popup_dacff90a809d4c80eb942f80ed1fb1de.setContent(html_aaca21f2b644057b5e8a8ca9e1c96f0d);
+            
+        
+
+        circle_marker_f22e1cd6707dfea713bb37ff9228fa03.bindPopup(popup_dacff90a809d4c80eb942f80ed1fb1de)
+        ;
+
+        
+    
+    
+            circle_marker_f22e1cd6707dfea713bb37ff9228fa03.bindTooltip(
+                `<div>
+                     SAINTE-LUCE — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b4d73b748b12a799485e1a1d6d3e0ea3 = L.marker(
+                [14.488635197861587, -60.94559957879414],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_25f2a29b67a865d61a524d13b474b208 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eSAINTE-LUCE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_b4d73b748b12a799485e1a1d6d3e0ea3.setIcon(div_icon_25f2a29b67a865d61a524d13b474b208);
+            
+    
+            var circle_marker_13aabd6610797904694893152597b554 = L.circleMarker(
+                [14.774406968568458, -61.017648670325805],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1e9a51ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.720483641536273, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_5c7fbfdd59b4d5a244e8247570688583 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_0e7e01eba3cf7b85b8ec18a925a40552 = $(`<div id="html_0e7e01eba3cf7b85b8ec18a925a40552" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ SAINTE-MARIE</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.019 mg/kg<br>         <b>Taux moyen :</b> 0.341 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 10.9%<br>         <b>Nb prélèvements :</b> 1406<br>     </div>     </div>`)[0];
+                popup_5c7fbfdd59b4d5a244e8247570688583.setContent(html_0e7e01eba3cf7b85b8ec18a925a40552);
+            
+        
+
+        circle_marker_13aabd6610797904694893152597b554.bindPopup(popup_5c7fbfdd59b4d5a244e8247570688583)
+        ;
+
+        
+    
+    
+            circle_marker_13aabd6610797904694893152597b554.bindTooltip(
+                `<div>
+                     SAINTE-MARIE — médiane : 0.02 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e345c3164a13675a94a7119f2975f031 = L.marker(
+                [14.774406968568458, -61.017648670325805],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_ac7b53a1091a2819a5b0f06e850014ef = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eSAINTE-MARIE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_e345c3164a13675a94a7119f2975f031.setIcon(div_icon_ac7b53a1091a2819a5b0f06e850014ef);
+            
+    
+            var circle_marker_1c47f62da2972963c65e5151cf1ef46c = L.circleMarker(
+                [14.638119365839799, -61.09971831373025],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_1118f5803e22fafc728922ce167ae5de = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_d2da20057f9e830980e99d6e5b8c1a23 = $(`<div id="html_d2da20057f9e830980e99d6e5b8c1a23" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ SCHOELCHER</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.001 mg/kg<br>         <b>Taux moyen :</b> 0.006 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 185<br>     </div>     </div>`)[0];
+                popup_1118f5803e22fafc728922ce167ae5de.setContent(html_d2da20057f9e830980e99d6e5b8c1a23);
+            
+        
+
+        circle_marker_1c47f62da2972963c65e5151cf1ef46c.bindPopup(popup_1118f5803e22fafc728922ce167ae5de)
+        ;
+
+        
+    
+    
+            circle_marker_1c47f62da2972963c65e5151cf1ef46c.bindTooltip(
+                `<div>
+                     SCHOELCHER — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_87168a03b1c7accef045ed17673457b8 = L.marker(
+                [14.638119365839799, -61.09971831373025],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_ac48702ba98e9104f3a87b07d70dbe85 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eSCHOELCHER\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_87168a03b1c7accef045ed17673457b8.setIcon(div_icon_ac48702ba98e9104f3a87b07d70dbe85);
+            
+    
+            var circle_marker_119c0e4f624b3150cd8f22850bd09d60 = L.circleMarker(
+                [14.738916925360028, -60.98022678862396],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#289d54ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.152588555858312, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_27e79af8c7dc20bdead99316e9bb5dcf = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_0c8d5c25c9c4ca1baaaa9a1b17e54782 = $(`<div id="html_0c8d5c25c9c4ca1baaaa9a1b17e54782" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ TRINITE(LA)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.060 mg/kg<br>         <b>Taux moyen :</b> 0.684 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 28.6%<br>         <b>Nb prélèvements :</b> 1101<br>     </div>     </div>`)[0];
+                popup_27e79af8c7dc20bdead99316e9bb5dcf.setContent(html_0c8d5c25c9c4ca1baaaa9a1b17e54782);
+            
+        
+
+        circle_marker_119c0e4f624b3150cd8f22850bd09d60.bindPopup(popup_27e79af8c7dc20bdead99316e9bb5dcf)
+        ;
+
+        
+    
+    
+            circle_marker_119c0e4f624b3150cd8f22850bd09d60.bindTooltip(
+                `<div>
+                     TRINITE(LA) — médiane : 0.06 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3cdb869f4ee5918058a2a812afbd4ebb = L.marker(
+                [14.738916925360028, -60.98022678862396],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_8fd0eed9551fabcbf84780fdac0e34ed = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eTRINITE(LA)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_3cdb869f4ee5918058a2a812afbd4ebb.setIcon(div_icon_8fd0eed9551fabcbf84780fdac0e34ed);
+            
+    
+            var circle_marker_15cf5844b6193cefec71a104473d4720 = L.circleMarker(
+                [14.530752451900376, -61.05282151584363],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_8069a22c8fb8574f08023fcc820b6b0a = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_4d030cc96fc694c46e2df694a17ad71f = $(`<div id="html_4d030cc96fc694c46e2df694a17ad71f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ TROIS-ILETS(LES)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.001 mg/kg<br>         <b>Taux moyen :</b> 0.001 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 0.0%<br>         <b>Nb prélèvements :</b> 152<br>     </div>     </div>`)[0];
+                popup_8069a22c8fb8574f08023fcc820b6b0a.setContent(html_4d030cc96fc694c46e2df694a17ad71f);
+            
+        
+
+        circle_marker_15cf5844b6193cefec71a104473d4720.bindPopup(popup_8069a22c8fb8574f08023fcc820b6b0a)
+        ;
+
+        
+    
+    
+            circle_marker_15cf5844b6193cefec71a104473d4720.bindTooltip(
+                `<div>
+                     TROIS-ILETS(LES) — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f50d5dba3fadc12c4399987f583280d8 = L.marker(
+                [14.530752451900376, -61.05282151584363],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_a4c83c07c258c39065b24e98ae57cbae = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eTROIS-ILETS(LES)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_f50d5dba3fadc12c4399987f583280d8.setIcon(div_icon_a4c83c07c258c39065b24e98ae57cbae);
+            
+    
+            var circle_marker_a8cec01092d39f6208b979ac1f8a9930 = L.circleMarker(
+                [14.552878747183517, -60.871426588950264],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.481389578163772, "stroke": true, "weight": 1}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+        var popup_137ec115e9b97dd8ace540b9171d5ab5 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_51bf40bbef5dd3af69b46bbae361b5e1 = $(`<div id="html_51bf40bbef5dd3af69b46bbae361b5e1" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 13px; min-width: 200px;">         <b style="font-size:15px;">🏘️ VAUCLIN(LE)</b><br>         <hr style="margin:5px 0;">         <b>Taux médian :</b> 0.003 mg/kg<br>         <b>Taux moyen :</b> 0.210 mg/kg<br>         <b>% > seuil (1 mg/kg) :</b> 9.9%<br>         <b>Nb prélèvements :</b> 1209<br>     </div>     </div>`)[0];
+                popup_137ec115e9b97dd8ace540b9171d5ab5.setContent(html_51bf40bbef5dd3af69b46bbae361b5e1);
+            
+        
+
+        circle_marker_a8cec01092d39f6208b979ac1f8a9930.bindPopup(popup_137ec115e9b97dd8ace540b9171d5ab5)
+        ;
+
+        
+    
+    
+            circle_marker_a8cec01092d39f6208b979ac1f8a9930.bindTooltip(
+                `<div>
+                     VAUCLIN(LE) — médiane : 0.00 mg/kg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_95a6dce259261ed76cc19b09f2eef850 = L.marker(
+                [14.552878747183517, -60.871426588950264],
+                {
+}
+            ).addTo(map_820d005b28b325020506d8b2220576b4);
+        
+    
+            var div_icon_115146d31196d6827e6516da7f30e147 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:9px; font-weight:bold; color:#333; white-space:nowrap;\"\u003eVAUCLIN(LE)\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [60, -8],
+  "className": "empty",
+});
+        
+    
+                marker_95a6dce259261ed76cc19b09f2eef850.setIcon(div_icon_115146d31196d6827e6516da7f30e147);
+            
+    
+    var color_map_e2a89c6f7bfd93cbbdba74693c09a5a4 = {};
+
+    
+    color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.color = d3.scale.threshold()
+              .domain([0.001, 0.006525050100200401, 0.012050100200400801, 0.017575150300601205, 0.023100200400801605, 0.028625250501002005, 0.03415030060120241, 0.0396753507014028, 0.04520040080160321, 0.050725450901803616, 0.05625050100200401, 0.06177555110220442, 0.06730060120240482, 0.07282565130260521, 0.0783507014028056, 0.08387575150300602, 0.08940080160320642, 0.09492585170340681, 0.10045090180360723, 0.10597595190380762, 0.11150100200400802, 0.11702605210420843, 0.12255110220440883, 0.12807615230460923, 0.13360120240480963, 0.13912625250501, 0.14465130260521042, 0.15017635270541083, 0.1557014028056112, 0.16122645290581164, 0.16675150300601205, 0.17227655310621243, 0.17780160320641283, 0.18332665330661324, 0.18885170340681362, 0.19437675350701403, 0.19990180360721446, 0.20542685370741484, 0.21095190380761525, 0.21647695390781566, 0.22200200400801604, 0.22752705410821644, 0.23305210420841685, 0.23857715430861723, 0.24410220440881766, 0.24962725450901807, 0.25515230460921845, 0.26067735470941883, 0.26620240480961926, 0.2717274549098197, 0.27725250501002, 0.28277755511022046, 0.28830260521042084, 0.29382765531062127, 0.29935270541082165, 0.3048777555110221, 0.3104028056112224, 0.31592785571142284, 0.3214529058116233, 0.32697795591182366, 0.3325030060120241, 0.3380280561122245, 0.34355310621242485, 0.34907815631262523, 0.35460320641282567, 0.3601282565130261, 0.3656533066132265, 0.37117835671342686, 0.37670340681362724, 0.3822284569138277, 0.38775350701402805, 0.3932785571142285, 0.3988036072144289, 0.40432865731462925, 0.4098537074148297, 0.41537875751503006, 0.4209038076152305, 0.4264288577154309, 0.4319539078156313, 0.43747895791583163, 0.44300400801603207, 0.4485290581162325, 0.4540541082164329, 0.4595791583166333, 0.4651042084168337, 0.4706292585170341, 0.47615430861723446, 0.4816793587174349, 0.4872044088176353, 0.4927294589178357, 0.49825450901803614, 0.5037795591182365, 0.5093046092184369, 0.5148296593186373, 0.5203547094188377, 0.5258797595190381, 0.5314048096192385, 0.536929859719439, 0.5424549098196394, 0.5479799599198396, 0.55350501002004, 0.5590300601202405, 0.5645551102204409, 0.5700801603206412, 0.5756052104208417, 0.5811302605210421, 0.5866553106212425, 0.592180360721443, 0.5977054108216433, 0.6032304609218437, 0.6087555110220442, 0.6142805611222445, 0.6198056112224448, 0.6253306613226453, 0.6308557114228457, 0.6363807615230461, 0.6419058116232466, 0.6474308617234469, 0.6529559118236473, 0.6584809619238478, 0.6640060120240482, 0.6695310621242486, 0.675056112224449, 0.6805811623246493, 0.6861062124248497, 0.6916312625250501, 0.6971563126252505, 0.7026813627254509, 0.7082064128256513, 0.7137314629258518, 0.7192565130260522, 0.7247815631262525, 0.730306613226453, 0.7358316633266534, 0.7413567134268537, 0.746881763527054, 0.7524068136272545, 0.7579318637274549, 0.7634569138276553, 0.7689819639278558, 0.7745070140280561, 0.7800320641282565, 0.785557114228457, 0.7910821643286574, 0.7966072144288578, 0.8021322645290582, 0.8076573146292585, 0.8131823647294589, 0.8187074148296594, 0.8242324649298597, 0.8297575150300601, 0.8352825651302606, 0.840807615230461, 0.8463326653306614, 0.8518577154308618, 0.8573827655310622, 0.8629078156312626, 0.868432865731463, 0.8739579158316633, 0.8794829659318637, 0.8850080160320641, 0.8905330661322646, 0.896058116232465, 0.9015831663326653, 0.9071082164328658, 0.9126332665330662, 0.9181583166332666, 0.923683366733467, 0.9292084168336674, 0.9347334669338677, 0.9402585170340682, 0.9457835671342686, 0.9513086172344689, 0.9568336673346693, 0.9623587174348698, 0.9678837675350702, 0.9734088176352707, 0.978933867735471, 0.9844589178356714, 0.9899839679358718, 0.9955090180360723, 1.0010340681362724, 1.0065591182364728, 1.0120841683366733, 1.0176092184368737, 1.0231342685370741, 1.0286593186372746, 1.0341843687374748, 1.0397094188376752, 1.0452344689378756, 1.050759519038076, 1.0562845691382765, 1.061809619238477, 1.0673346693386772, 1.0728597194388778, 1.078384769539078, 1.0839098196392787, 1.089434869739479, 1.094959919839679, 1.1004849699398798, 1.10601002004008, 1.1115350701402806, 1.1170601202404808, 1.1225851703406813, 1.1281102204408817, 1.1336352705410822, 1.1391603206412824, 1.144685370741483, 1.1502104208416832, 1.155735470941884, 1.161260521042084, 1.1667855711422843, 1.172310621242485, 1.1778356713426852, 1.1833607214428858, 1.188885771543086, 1.1944108216432865, 1.199935871743487, 1.2054609218436874, 1.2109859719438878, 1.2165110220440882, 1.2220360721442884, 1.2275611222444889, 1.2330861723446893, 1.2386112224448895, 1.2441362725450902, 1.2496613226452904, 1.255186372745491, 1.2607114228456913, 1.2662364729458917, 1.2717615230460921, 1.2772865731462926, 1.282811623246493, 1.2883366733466932, 1.2938617234468937, 1.299386773547094, 1.3049118236472945, 1.310436873747495, 1.3159619238476954, 1.3214869739478956, 1.3270120240480963, 1.3325370741482965, 1.3380621242484971, 1.3435871743486973, 1.3491122244488978, 1.3546372745490982, 1.3601623246492984, 1.3656873747494989, 1.3712124248496993, 1.3767374749498997, 1.3822625250501002, 1.3877875751503006, 1.3933126252505008, 1.3988376753507015, 1.4043627254509017, 1.4098877755511023, 1.4154128256513026, 1.4209378757515028, 1.4264629258517034, 1.4319879759519036, 1.4375130260521043, 1.4430380761523045, 1.448563126252505, 1.4540881763527054, 1.4596132264529058, 1.4651382765531062, 1.4706633266533067, 1.476188376753507, 1.4817134268537073, 1.4872384769539078, 1.492763527054108, 1.4982885771543086, 1.5038136272545088, 1.5093386773547095, 1.5148637274549097, 1.5203887775551101, 1.5259138276553106, 1.531438877755511, 1.5369639278557115, 1.5424889779559119, 1.548014028056112, 1.5535390781563125, 1.559064128256513, 1.5645891783567134, 1.5701142284569138, 1.575639278557114, 1.5811643286573147, 1.586689378757515, 1.5922144288577156, 1.5977394789579158, 1.6032645290581162, 1.6087895791583167, 1.6143146292585169, 1.6198396793587173, 1.6253647294589177, 1.6308897795591182, 1.6364148296593186, 1.641939879759519, 1.6474649298597193, 1.65298997995992, 1.6585150300601201, 1.6640400801603208, 1.669565130260521, 1.6750901803607212, 1.6806152304609219, 1.686140280561122, 1.6916653306613227, 1.697190380761523, 1.7027154308617234, 1.7082404809619238, 1.7137655310621243, 1.7192905811623245, 1.7248156312625251, 1.7303406813627253, 1.735865731462926, 1.7413907815631262, 1.7469158316633264, 1.752440881763527, 1.7579659318637273, 1.763490981963928, 1.7690160320641282, 1.7745410821643286, 1.780066132264529, 1.7855911823647295, 1.79111623246493, 1.7966412825651303, 1.8021663326653306, 1.807691382765531, 1.8132164328657314, 1.8187414829659319, 1.8242665330661323, 1.8297915831663325, 1.8353166332665332, 1.8408416833667334, 1.8463667334669338, 1.8518917835671342, 1.8574168336673347, 1.8629418837675351, 1.8684669338677353, 1.8739919839679358, 1.8795170340681362, 1.8850420841683366, 1.890567134268537, 1.8960921843687375, 1.9016172344689377, 1.9071422845691384, 1.9126673346693386, 1.9181923847695392, 1.9237174348697395, 1.9292424849699399, 1.9347675350701403, 1.9402925851703405, 1.9458176352705412, 1.9513426853707414, 1.9568677354709418, 1.9623927855711423, 1.9679178356713427, 1.973442885771543, 1.9789679358717436, 1.9844929859719438, 1.9900180360721444, 1.9955430861723447, 2.001068136272545, 2.0065931863727453, 2.0121182364729457, 2.017643286573146, 2.0231683366733466, 2.028693386773547, 2.0342184368737475, 2.039743486973948, 2.0452685370741484, 2.050793587174349, 2.056318637274549, 2.0618436873747497, 2.0673687374749496, 2.07289378757515, 2.0784188376753505, 2.0839438877755514, 2.0894689378757514, 2.094993987975952, 2.1005190380761523, 2.1060440881763527, 2.111569138276553, 2.1170941883767536, 2.122619238476954, 2.128144288577154, 2.1336693386773544, 2.1391943887775553, 2.1447194388777557, 2.1502444889779557, 2.155769539078156, 2.1612945891783566, 2.1668196392785575, 2.1723446893787575, 2.177869739478958, 2.1833947895791583, 2.1889198396793583, 2.194444889779559, 2.1999699398797596, 2.20549498997996, 2.21102004008016, 2.2165450901803605, 2.2220701402805614, 2.227595190380762, 2.233120240480962, 2.2386452905811622, 2.2441703406813627, 2.2496953907815636, 2.2552204408817635, 2.260745490981964, 2.2662705410821644, 2.2717955911823644, 2.277320641282565, 2.2828456913827657, 2.288370741482966, 2.293895791583166, 2.2994208416833666, 2.304945891783567, 2.310470941883768, 2.315995991983968, 2.3215210420841683, 2.3270460921843688, 2.3325711422845687, 2.3380961923847696, 2.34362124248497, 2.3491462925851705, 2.3546713426853705, 2.360196392785571, 2.365721442885772, 2.3712464929859722, 2.3767715430861722, 2.3822965931863727, 2.387821643286573, 2.3933466933867735, 2.398871743486974, 2.4043967935871744, 2.409921843687375, 2.415446893787575, 2.4209719438877757, 2.426496993987976, 2.4320220440881766, 2.4375470941883766, 2.443072144288577, 2.448597194388778, 2.454122244488978, 2.4596472945891783, 2.4651723446893787, 2.470697394789579, 2.476222444889779, 2.48174749498998, 2.4872725450901805, 2.492797595190381, 2.498322645290581, 2.5038476953907813, 2.509372745490982, 2.514897795591182, 2.5204228456913826, 2.525947895791583, 2.5314729458917835, 2.536997995991984, 2.5425230460921844, 2.548048096192385, 2.5535731462925852, 2.5590981963927852, 2.564623246492986, 2.5701482965931866, 2.5756733466933865, 2.581198396793587, 2.5867234468937874, 2.5922484969939883, 2.5977735470941883, 2.6032985971943887, 2.608823647294589, 2.6143486973947896, 2.61987374749499, 2.6253987975951905, 2.630923847695391, 2.6364488977955913, 2.6419739478957913, 2.647498997995992, 2.6530240480961926, 2.6585490981963926, 2.664074148296593, 2.6695991983967935, 2.6751242484969944, 2.6806492985971944, 2.686174348697395, 2.6916993987975952, 2.6972244488977957, 2.702749498997996, 2.7082745490981965, 2.713799599198397, 2.719324649298597, 2.7248496993987974, 2.730374749498998, 2.7358997995991987, 2.7414248496993987, 2.746949899799599, 2.7524749498997996, 2.758])
+              .range(['#1a9850ff', '#1b9950ff', '#1c9951ff', '#1e9951ff', '#1f9a51ff', '#209a52ff', '#229b52ff', '#239b52ff', '#259c53ff', '#269c53ff', '#279c53ff', '#299d54ff', '#2a9d54ff', '#2b9e54ff', '#2d9e55ff', '#2e9f55ff', '#309f56ff', '#319f56ff', '#32a056ff', '#34a057ff', '#35a157ff', '#37a157ff', '#38a258ff', '#39a258ff', '#3ba358ff', '#3ca359ff', '#3da359ff', '#3fa459ff', '#40a45aff', '#42a55aff', '#43a55aff', '#44a65bff', '#46a65bff', '#47a65cff', '#48a75cff', '#4aa75cff', '#4ba85dff', '#4da85dff', '#4ea95dff', '#4fa95eff', '#51a95eff', '#52aa5eff', '#53aa5fff', '#55ab5fff', '#56ab5fff', '#58ac60ff', '#59ac60ff', '#5aad61ff', '#5cad61ff', '#5dad61ff', '#5eae62ff', '#60ae62ff', '#61af62ff', '#63af63ff', '#64b063ff', '#65b063ff', '#67b064ff', '#68b164ff', '#69b164ff', '#6bb265ff', '#6cb265ff', '#6eb366ff', '#6fb366ff', '#70b366ff', '#72b467ff', '#73b467ff', '#74b567ff', '#76b568ff', '#77b668ff', '#79b668ff', '#7ab769ff', '#7bb769ff', '#7db769ff', '#7eb86aff', '#7fb86aff', '#81b96bff', '#82b96bff', '#84ba6bff', '#85ba6cff', '#86ba6cff', '#88bb6cff', '#89bb6dff', '#8abc6dff', '#8cbc6dff', '#8dbd6eff', '#8fbd6eff', '#90bd6eff', '#91be6fff', '#93be6fff', '#94bf70ff', '#95bf70ff', '#97c070ff', '#98c071ff', '#9ac171ff', '#9bc171ff', '#9cc172ff', '#9ec272ff', '#9fc272ff', '#a0c373ff', '#a2c373ff', '#a3c473ff', '#a5c474ff', '#a6c474ff', '#a7c574ff', '#a9c575ff', '#aac675ff', '#abc676ff', '#adc776ff', '#aec776ff', '#b0c777ff', '#b1c877ff', '#b2c877ff', '#b4c978ff', '#b5c978ff', '#b6ca78ff', '#b8ca79ff', '#b9cb79ff', '#bbcb79ff', '#bccb7aff', '#bdcc7aff', '#bfcc7bff', '#c0cd7bff', '#c1cd7bff', '#c3ce7cff', '#c4ce7cff', '#c6ce7cff', '#c7cf7dff', '#c8cf7dff', '#cad07dff', '#cbd07eff', '#ccd17eff', '#ced17eff', '#cfd17fff', '#d1d27fff', '#d2d280ff', '#d3d380ff', '#d5d380ff', '#d6d481ff', '#d8d481ff', '#d9d581ff', '#dad582ff', '#dcd582ff', '#ddd682ff', '#ded683ff', '#e0d783ff', '#e1d783ff', '#e3d884ff', '#e4d884ff', '#e5d885ff', '#e7d985ff', '#e8d985ff', '#e9da86ff', '#ebda86ff', '#ecdb86ff', '#eedb87ff', '#efdb87ff', '#f0dc87ff', '#f2dc88ff', '#f3dd88ff', '#f4dd88ff', '#f6de89ff', '#f7de89ff', '#f9de8aff', '#fadf8aff', '#fbdf8aff', '#fde08bff', '#fee08bff', '#fee08bff', '#fedf8aff', '#fedf8aff', '#fede89ff', '#fedd89ff', '#fedc89ff', '#fedc88ff', '#fedb88ff', '#feda87ff', '#feda87ff', '#fed986ff', '#fed886ff', '#fed886ff', '#fed785ff', '#fed685ff', '#fed684ff', '#fdd584ff', '#fdd483ff', '#fdd383ff', '#fdd382ff', '#fdd282ff', '#fdd182ff', '#fdd181ff', '#fdd081ff', '#fdcf80ff', '#fdcf80ff', '#fdce7fff', '#fdcd7fff', '#fdcc7fff', '#fdcc7eff', '#fdcb7eff', '#fdca7dff', '#fdca7dff', '#fcc97cff', '#fcc87cff', '#fcc87cff', '#fcc77bff', '#fcc67bff', '#fcc67aff', '#fcc57aff', '#fcc479ff', '#fcc379ff', '#fcc379ff', '#fcc278ff', '#fcc178ff', '#fcc177ff', '#fcc077ff', '#fcbf76ff', '#fcbf76ff', '#fbbe75ff', '#fbbd75ff', '#fbbd75ff', '#fbbc74ff', '#fbbb74ff', '#fbba73ff', '#fbba73ff', '#fbb972ff', '#fbb872ff', '#fbb872ff', '#fbb771ff', '#fbb671ff', '#fbb670ff', '#fbb570ff', '#fbb46fff', '#fbb36fff', '#fbb36fff', '#fab26eff', '#fab16eff', '#fab16dff', '#fab06dff', '#faaf6cff', '#faaf6cff', '#faae6bff', '#faad6bff', '#faad6bff', '#faac6aff', '#faab6aff', '#faaa69ff', '#faaa69ff', '#faa968ff', '#faa868ff', '#faa868ff', '#faa767ff', '#f9a667ff', '#f9a666ff', '#f9a566ff', '#f9a465ff', '#f9a465ff', '#f9a365ff', '#f9a264ff', '#f9a164ff', '#f9a163ff', '#f9a063ff', '#f99f62ff', '#f99f62ff', '#f99e61ff', '#f99d61ff', '#f99d61ff', '#f99c60ff', '#f89b60ff', '#f89b5fff', '#f89a5fff', '#f8995eff', '#f8985eff', '#f8985eff', '#f8975dff', '#f8965dff', '#f8965cff', '#f8955cff', '#f8945bff', '#f8945bff', '#f8935bff', '#f8925aff', '#f8915aff', '#f89159ff', '#f89059ff', '#f78f58ff', '#f78f58ff', '#f78e57ff', '#f78d57ff', '#f78d57ff', '#f78c56ff', '#f78b56ff', '#f78b55ff', '#f78a55ff', '#f78954ff', '#f78854ff', '#f78854ff', '#f78753ff', '#f78653ff', '#f78652ff', '#f78552ff', '#f68451ff', '#f68451ff', '#f68351ff', '#f68250ff', '#f68250ff', '#f6814fff', '#f6804fff', '#f67f4eff', '#f67f4eff', '#f67e4dff', '#f67d4dff', '#f67d4dff', '#f67c4cff', '#f67b4cff', '#f67b4bff', '#f67a4bff', '#f6794aff', '#f5784aff', '#f5784aff', '#f57749ff', '#f57649ff', '#f57648ff', '#f57548ff', '#f57447ff', '#f57447ff', '#f57347ff', '#f57246ff', '#f57246ff', '#f57145ff', '#f57045ff', '#f56f44ff', '#f56f44ff', '#f56e43ff', '#f46d43ff', '#f46d43ff', '#f46c43ff', '#f36b42ff', '#f36b42ff', '#f26a42ff', '#f26942ff', '#f16942ff', '#f16841ff', '#f06741ff', '#f06741ff', '#f06641ff', '#ef6541ff', '#ef6541ff', '#ee6440ff', '#ee6340ff', '#ed6340ff', '#ed6240ff', '#ec6240ff', '#ec6140ff', '#eb603fff', '#eb603fff', '#ea5f3fff', '#ea5e3fff', '#e95e3fff', '#e95d3fff', '#e85c3eff', '#e85c3eff', '#e75b3eff', '#e75a3eff', '#e65a3eff', '#e6593dff', '#e6583dff', '#e5583dff', '#e5573dff', '#e4563dff', '#e4563dff', '#e3553cff', '#e3543cff', '#e2543cff', '#e2533cff', '#e1523cff', '#e1523cff', '#e0513bff', '#e0503bff', '#df503bff', '#df4f3bff', '#de4e3bff', '#de4e3aff', '#dd4d3aff', '#dd4c3aff', '#dc4c3aff', '#dc4b3aff', '#dc4a3aff', '#db4a39ff', '#db4939ff', '#da4939ff', '#da4839ff', '#d94739ff', '#d94739ff', '#d84638ff', '#d84538ff', '#d74538ff', '#d74438ff', '#d64338ff', '#d64338ff', '#d54237ff', '#d54137ff', '#d44137ff', '#d44037ff', '#d33f37ff', '#d33f36ff', '#d23e36ff', '#d23d36ff', '#d13d36ff', '#d13c36ff', '#d13b36ff', '#d03b35ff', '#d03a35ff', '#cf3935ff', '#cf3935ff', '#ce3835ff', '#ce3735ff', '#cd3734ff', '#cd3634ff', '#cc3534ff', '#cc3534ff', '#cb3434ff', '#cb3333ff', '#ca3333ff', '#ca3233ff', '#c93133ff', '#c93133ff', '#c83033ff', '#c83032ff', '#c72f32ff', '#c72e32ff', '#c72e32ff', '#c62d32ff', '#c62c32ff', '#c52c31ff', '#c52b31ff', '#c42a31ff', '#c42a31ff', '#c32931ff', '#c32831ff', '#c22830ff', '#c22730ff', '#c12630ff', '#c12630ff', '#c02530ff', '#c0242fff', '#bf242fff', '#bf232fff', '#be222fff', '#be222fff', '#bd212fff', '#bd202eff', '#bd202eff', '#bc1f2eff', '#bc1e2eff', '#bb1e2eff', '#bb1d2eff', '#ba1c2dff', '#ba1c2dff', '#b91b2dff', '#b91a2dff', '#b81a2dff', '#b8192cff', '#b7182cff', '#b7182cff', '#b6172cff', '#b6172cff', '#b5162cff', '#b5152bff', '#b4152bff', '#b4142bff', '#b3132bff', '#b3132bff', '#b2122bff', '#b2112aff', '#b2112aff', '#b1102aff', '#b10f2aff', '#b00f2aff', '#b00e29ff', '#af0d29ff', '#af0d29ff', '#ae0c29ff', '#ae0b29ff', '#ad0b29ff', '#ad0a28ff', '#ac0928ff', '#ac0928ff', '#ab0828ff', '#ab0728ff', '#aa0728ff', '#aa0627ff', '#a90527ff', '#a90527ff', '#a80427ff', '#a80327ff', '#a80327ff', '#a70226ff', '#a70126ff', '#a60126ff', '#a60026ff', '#a50026ff']);
+    
+
+    color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.x = d3.scale.linear()
+              .domain([0.001, 2.758])
+              .range([0, 450 - 50]);
+
+    color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.legend = L.control({position: 'topright'});
+    color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.legend.addTo(map_820d005b28b325020506d8b2220576b4);
+
+    color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.xAxis = d3.svg.axis()
+        .scale(color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([0.001, 0.92, 1.839, 2.758]);
+
+    color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.g = color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.g.selectAll("rect")
+        .data(color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.x(color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.color.domain()[i - 1]) : color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.x.range()[0],
+            x1: i < color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.color.domain().length ? color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.x(color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.color.domain()[i]) : color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.g.call(color_map_e2a89c6f7bfd93cbbdba74693c09a5a4.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("Taux m\u00e9dian de chlord\u00e9cone (mg/kg)");
+</script>
+</html>
