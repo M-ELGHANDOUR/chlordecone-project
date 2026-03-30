@@ -25,6 +25,8 @@ sur un vrai jeu de données environnemental — du nettoyage brut jusqu'à la mo
 et la cartographie interactive.
 
 > 📬 N'hésitez pas à me contacter si vous cherchez un alternant motivé et rigoureux !
+> +33759459928
+> mohsine.elghandour@etu.univ-poitiers.fr
 
 ---
 
