@@ -16,7 +16,7 @@
 ## 👤 À propos de moi
 
 Je suis **Mohsine Elghandour**, étudiant en **Data Science à l'ENSAR Poitiers**
-(École Nationale Supérieure d'Agronomie et des industries alimentaires),
+(École Nationale Supérieure des sciences Applicatives et du Risque),
 **actuellement à la recherche d'une alternance de 2026 à 2028** dans les domaines
 de la Data Science, du Machine Learning ou de l'IA appliquée.
 
