@@ -73,21 +73,7 @@ chlordecone-project/
 │   ├── 01_data_engineering.ipynb          # Étape 1 : Ingestion, validation, nettoyage
 │   ├── 02_data_analysis.ipynb             # Étape 2 : Statistiques, tests, visualisations
 │   ├── 03_modeling.ipynb                  # Étape 3 : Modélisation KNN
-│   └── 04_cartographie_interactive.ipynb  # Étape 4 : Cartes HTML interactives
-│
-├── 📦 src/
-│   ├── data_engineering/
-│   │   ├── ingestion.py                   # Chargement et validation du schéma
-│   │   ├── cleaning.py                    # Nettoyage, feature engineering
-│   │   └── pipeline.py                    # Pipeline ETL complet (CLI)
-│   ├── data_analysis/
-│   │   ├── stats.py                       # Tests statistiques (KS, KW, MW, χ², Spearman)
-│   │   ├── visualization.py               # Graphiques matplotlib/seaborn
-│   │   └── spatial.py                     # Analyse spatiale GeoPandas
-│   └── modeling/
-│       ├── preprocessing.py               # Feature engineering pour ML
-│       ├── knn_classifier.py              # KNN Classification + permutation importance
-│       └── knn_regressor.py               # KNN Régression + courbe biais-variance
+│   └── 04_cartographie_interactive.ipynb  # Étape 4 : Cartes HTML interactives     
 │
 ├── 📊 reports/
 │   ├── figures/                           # Graphiques exportés (.png)
